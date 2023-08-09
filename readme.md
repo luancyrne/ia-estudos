@@ -1,6 +1,7 @@
 A Inteligência Artificial (IA) é um campo amplo que engloba várias abordagens, técnicas e conceitos. Abaixo estão alguns dos conceitos mais importantes relacionados à IA:
 
-[SUMARIO]
+# Sumário
+[SUMÁRIO]
 
 [Tipos de IA](#tipos)
 
@@ -19,7 +20,8 @@ A Inteligência Artificial (IA) é um campo amplo que engloba várias abordagens
 
 [--------------]
 # Tipos
-**Tipos de IA:**
+# Retornar[](#sumário)
+**Tipos de IA:**[]
 1. **Aprendizado de Máquina (Machine Learning - ML):**
    O Aprendizado de Máquina é uma subárea da IA que se concentra em desenvolver algoritmos e modelos que permitem aos computadores aprender a partir de dados. Existem três principais abordagens de ML:
    - **Aprendizado Supervisionado:** Os modelos são treinados em um conjunto de dados rotulados, onde cada exemplo possui uma entrada e uma saída esperada. O objetivo é fazer com que o modelo generalize para prever saídas corretas para novos dados não vistos.
@@ -401,6 +403,7 @@ A Inteligência Artificial (IA) é um campo amplo que engloba várias abordagens
 
 [----------------]
 # Aprofundando
+[](#sumário)
 ***Sessão dedicada e aprofundada sobre cada arquitetura (O mais importante e direto)***
 1. **Redes Multilayer Perceptron**
    Redes Multilayer Perceptron (MLP) são um tipo de arquitetura de rede neural artificial que consiste em várias camadas de neurônios, incluindo uma camada de entrada, uma ou mais camadas ocultas e uma camada de saída. Essa arquitetura é chamada de "multilayer" (multicamadas) porque inclui múltiplas camadas de neurônios interconectados. Vou explicar com mais detalhes:
@@ -716,6 +719,7 @@ A Inteligência Artificial (IA) é um campo amplo que engloba várias abordagens
 
 [--------------------------------------]
 # Formulas
+[](#sumário)
 **Formula matematica de cada conceito:**
 1. **Perceptron:**
    A saída de um perceptron é calculada como a soma ponderada das entradas mais o viés, seguida pela aplicação de uma função de ativação. A fórmula matemática do perceptron é:
@@ -755,6 +759,7 @@ A Inteligência Artificial (IA) é um campo amplo que engloba várias abordagens
 
 [-----------------------------------------------]
 # Simplificando
+[](#sumário)
 **Simplificando a formula:**
 1. **Perceptron:**
    Imagine um perceptron com três entradas (x1, x2, x3), três pesos (w1, w2, w3), e um viés (b). A saída (y) do perceptron é calculada da seguinte forma:
@@ -803,6 +808,7 @@ A Inteligência Artificial (IA) é um campo amplo que engloba várias abordagens
 
 [-------------------]
 # Exemplos
+[](#sumário)
 **Exemplo em código**
 1. **Perceptron - Operação OR:**
    ```javascript
@@ -1421,6 +1427,7 @@ A Inteligência Artificial (IA) é um campo amplo que engloba várias abordagens
 
 [-------------------]
 # Metodos
+[](#sumário)
 **Metodos comuns e utilizados em certa arquitetura**
 
 1. **Funções de Ativação:**
@@ -1482,7 +1489,8 @@ A Inteligência Artificial (IA) é um campo amplo que engloba várias abordagens
 
 
 [-------------------------------------]
-# Arquiteturas      
+# Arquiteturas
+[](#sumário)      
 **Arquiteturas e ativações detalhadas**
 1. **Resumo**
       Existem várias arquiteturas de redes neurais, cada uma com suas próprias características e usos. Algumas das principais arquiteturas de redes neurais incluem:
