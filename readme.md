@@ -1,7 +1,17 @@
 A Inteligência Artificial (IA) é um campo amplo que engloba várias abordagens, técnicas e conceitos. Abaixo estão alguns dos conceitos mais importantes relacionados à IA:
 
+[SUMARIO]
+[Tipos de IA](#type)
+[Sessão dedicada e aprofundada sobre cada arquitetura](#arch)
+[Formulas de cada conceito](#form)
+[Simplificando a formula](#simple)
+[Exemplos em código (Não funcionais, apenas representação)](#example)
+[Metodos mais utilizados](#method)
+[Arquiteturas e ativações detalhadas](#archandact)
+
+
 [--------------]
-**Tipos de IA:**
+**Tipos de IA:**![](#type)
 1. **Aprendizado de Máquina (Machine Learning - ML):**
    O Aprendizado de Máquina é uma subárea da IA que se concentra em desenvolver algoritmos e modelos que permitem aos computadores aprender a partir de dados. Existem três principais abordagens de ML:
    - **Aprendizado Supervisionado:** Os modelos são treinados em um conjunto de dados rotulados, onde cada exemplo possui uma entrada e uma saída esperada. O objetivo é fazer com que o modelo generalize para prever saídas corretas para novos dados não vistos.
@@ -381,13 +391,322 @@ A Inteligência Artificial (IA) é um campo amplo que engloba várias abordagens
          GANs geralmente requerem grandes conjuntos de dados para obter resultados satisfatórios, o que pode ser um obstáculo em cenários onde os dados são limitados ou difíceis de coletar.
 
 
+[----------------]
+***Sessão dedicada e aprofundada sobre cada arquitetura (O mais importante e direto)***[](#arch)
+1. **Redes Multilayer Perceptron**
+   Redes Multilayer Perceptron (MLP) são um tipo de arquitetura de rede neural artificial que consiste em várias camadas de neurônios, incluindo uma camada de entrada, uma ou mais camadas ocultas e uma camada de saída. Essa arquitetura é chamada de "multilayer" (multicamadas) porque inclui múltiplas camadas de neurônios interconectados. Vou explicar com mais detalhes:
+
+   **Estrutura de uma MLP:**
+
+   1. **Camada de Entrada:** Esta camada recebe os dados de entrada e geralmente consiste em neurônios correspondentes às características ou dimensões dos dados.
+
+   2. **Camadas Ocultas:** Essas camadas estão localizadas entre a camada de entrada e a camada de saída. Cada camada oculta é composta por vários neurônios, e a quantidade de camadas ocultas varia de acordo com a complexidade do problema. Cada neurônio em uma camada oculta está conectado a todos os neurônios na camada anterior e na camada seguinte.
+
+   3. **Camada de Saída:** Esta camada fornece os resultados finais da rede neural. O número de neurônios na camada de saída depende do tipo de tarefa que a rede está realizando. Por exemplo, para classificação binária, pode haver um neurônio de saída; para classificação multiclasse, pode haver vários neurônios.
+
+   **Funcionamento de uma MLP:**
+
+   Cada neurônio em uma camada oculta ou na camada de saída tem um valor de ativação associado a ele. O cálculo do valor de ativação de um neurônio envolve duas etapas principais:
+
+   1. **Combinação Linear:** Os valores de ativação dos neurônios na camada anterior são ponderados pelos pesos associados às conexões entre os neurônios. Esses valores ponderados são somados juntamente com um termo de viés (bias).
+
+   2. **Função de Ativação:** O resultado da combinação linear é passado através de uma função de ativação, que determina se o neurônio deve ser ativado ou não com base no valor calculado.
+
+   **Funções de Ativação em MLP:**
+
+   As funções de ativação desempenham um papel crucial no funcionamento das MLPs. As funções mais comuns usadas em camadas ocultas e na camada de saída incluem:
+
+   - **ReLU (Rectified Linear Unit):** f(x) = max(0, x)
+   - **Tangente Hiperbólica (tanh):** f(x) = (exp(x) - exp(-x)) / (exp(x) + exp(-x))
+   - **Sigmoid:** f(x) = 1 / (1 + exp(-x))
+   - **Softmax:** Usada na camada de saída para classificação multiclasse.
+
+   **Treinamento de MLP:**
+
+   O treinamento de uma MLP envolve a alimentação dos dados de treinamento na rede, cálculo das saídas, comparação com os resultados esperados e ajuste dos pesos e vieses usando algoritmos de otimização, como o Gradiente Descendente.
+
+   As MLPs são versáteis e podem ser usadas para tarefas como classificação, regressão e aproximação de funções complexas. No entanto, para problemas mais complexos, como reconhecimento de imagem e processamento de linguagem natural, outras arquiteturas, como Redes Neurais Convolucionais (CNNs) e Redes Recorrentes (RNNs), são mais adequadas.
 
 
+2. **Redes Neurais Convolucionais**
+   Redes Neurais Convolucionais (Convolutional Neural Networks - CNNs) são um tipo especializado de arquitetura de rede neural projetada para processar dados que possuem uma estrutura de grade, como imagens e, mais amplamente, dados com arranjos espaciais, como sinais de áudio e séries temporais. As CNNs são especialmente eficazes na extração de recursos relevantes de dados multidimensionais, tornando-as uma escolha popular para tarefas de visão computacional e análise de dados sequenciais. Vamos mergulhar mais fundo nas CNNs:
 
+   **Principais Características das CNNs:**
+
+   1. **Camadas Convolucionais:** As camadas convolucionais são o coração das CNNs. Elas aplicam operações de convolução nos dados de entrada para extrair características relevantes. Essas características podem ser bordas, texturas, padrões e objetos em uma imagem.
+
+   2. **Camadas de Pooling:** As camadas de pooling reduzem a dimensionalidade dos dados, preservando os recursos mais importantes. A operação de pooling mais comum é o max pooling, que seleciona o valor máximo de um grupo de valores próximos.
+
+   3. **Camadas Totalmente Conectadas:** Após passar pelas camadas convolucionais e de pooling, os recursos são achatados e alimentados em camadas totalmente conectadas para tomada de decisões finais.
+
+   4. **Uso de Funções de Ativação:** As funções de ativação, como ReLU, são aplicadas nas saídas das camadas convolucionais para introduzir não linearidade e permitir a aprendizagem de recursos mais complexos.
+
+   **Vantagens das CNNs:**
+
+   1. **Detecção Hierárquica de Recursos:** As camadas convolucionais são capazes de detectar recursos em diferentes níveis de abstração. Camadas iniciais detectam bordas e texturas, enquanto camadas posteriores podem identificar objetos complexos.
+
+   2. **Invariância de Translação:** As CNNs são capazes de reconhecer recursos independentemente de sua posição na imagem, o que as torna robustas a variações de translação.
+
+   3. **Redução de Parâmetros:** As camadas de pooling reduzem a dimensionalidade dos dados, permitindo que a rede capture características importantes com menos parâmetros.
+
+   4. **Transferência de Aprendizado:** As CNNs pré-treinadas em grandes conjuntos de dados (como o ImageNet) podem ser usadas como ponto de partida para tarefas específicas, economizando tempo e recursos.
+
+   **Exemplo de Aplicação: Reconhecimento de Imagens:**
+
+   Uma aplicação comum das CNNs é o reconhecimento de imagens. Aqui está um fluxo geral de como as CNNs são usadas para essa tarefa:
+
+   1. **Camadas Convolucionais:** As primeiras camadas convolucionais detectam bordas e padrões simples. Camadas posteriores detectam formas mais complexas e objetos.
+
+   2. **Camadas de Pooling:** As camadas de pooling reduzem a dimensionalidade dos dados, mantendo características importantes.
+
+   3. **Camadas Totalmente Conectadas:** Após passar pelas camadas convolucionais e de pooling, os recursos são achatados e alimentados em camadas totalmente conectadas.
+
+   4. **Camada de Saída:** A camada de saída consiste em neurônios que representam classes possíveis. Softmax é frequentemente usada para converter as saídas em probabilidades.
+
+   5. **Treinamento:** A rede é treinada com imagens rotuladas usando algoritmos de otimização, como o Gradiente Descendente.
+
+   **Arquiteturas de CNNs Populares:**
+
+   - **LeNet:** Uma das primeiras arquiteturas CNNs, projetada para reconhecimento de dígitos manuscritos.
+   - **AlexNet:** Introduziu o uso de GPU para treinamento de redes profundas e obteve grande sucesso no desafio ImageNet.
+   - **VGG:** Caracterizada por sua profundidade com camadas convolucionais e de pooling consecutivas.
+   - **ResNet:** Introduziu o conceito de blocos residuais, facilitando o treinamento de redes profundas.
+   - **Inception (GoogLeNet):** Utiliza múltiplas operações convolucionais em paralelo para capturar diferentes escalas de recursos.
+   - **Xception:** Uma extensão do Inception que usa convoluções separáveis em profundidade.
+
+3. **Redes Neurais Recorrentes**
+   Redes Neurais Recorrentes (Recurrent Neural Networks - RNNs) são uma classe de arquiteturas de redes neurais projetadas para lidar com dados sequenciais ou temporais. Diferentemente das redes neurais tradicionais, as RNNs possuem conexões recorrentes, o que lhes permite manter informações sobre estados anteriores e usar essas informações para processar dados em sequência. Vamos explorar mais sobre as RNNs:
+
+   **Principais Características das RNNs:**
+
+   1. **Recorrência:** A principal característica das RNNs é sua capacidade de manter estados anteriores e usar esses estados para influenciar a saída atual. Isso é especialmente útil em dados sequenciais, onde a ordem importa.
+
+   2. **Camadas Ocultas com Ciclo:** As RNNs têm camadas ocultas que são conectadas a si mesmas, criando um ciclo de retroalimentação que permite que as informações fluam entre diferentes etapas de tempo.
+
+   3. **Compartilhamento de Pesos:** Ao longo do tempo, as mesmas conexões e pesos são reutilizados em cada etapa da sequência. Isso permite que as RNNs capturem dependências temporais e modelagem de sequência.
+
+   **Desafios das RNNs:**
+
+   As RNNs têm uma limitação conhecida como "problema do gradiente desvanecente" e "problema da explosão do gradiente". Isso ocorre quando os gradientes usados para ajustar os pesos da rede diminuem ou aumentam exponencialmente à medida que são propagados ao longo do tempo, dificultando o treinamento eficiente de sequências longas. Para superar esses desafios, surgiram variações das RNNs, como as LSTMs (Long Short-Term Memory) e GRUs (Gated Recurrent Units).
+
+   **Variações das RNNs:**
+
+   1. **LSTM (Long Short-Term Memory):** As LSTMs foram projetadas para capturar dependências de longo prazo em sequências. Elas têm unidades especiais chamadas "células de memória" que ajudam a manter informações ao longo de muitos passos de tempo.
+
+   2. **GRU (Gated Recurrent Unit):** As GRUs também abordam o problema do gradiente desvanecente. Elas têm portas que controlam o fluxo de informações e memória através das etapas de tempo, permitindo que a rede aprenda quais informações reter e quais esquecer.
+
+   **Aplicações das RNNs:**
+
+   As RNNs são amplamente utilizadas em tarefas que envolvem sequências, como:
+
+   - **Processamento de Linguagem Natural (NLP):** Tradução automática, geração de texto, análise de sentimentos, reconhecimento de fala.
+   
+   - **Previsão de Séries Temporais:** Previsão de vendas, preços de ações, previsão climática.
+
+   - **Análise de Dados Sequenciais:** Reconhecimento de escrita à mão, análise de EEG, análise de DNA.
+
+   **Arquiteturas Derivadas das RNNs:**
+
+   1. **Redes Neurais de Memória de Curto Prazo (LSTM):** Adicionam unidades de memória de longo e curto prazo às RNNs, permitindo que aprendam e mantenham dependências temporais complexas.
+
+   2. **Redes Neurais Bidirecionais (BiRNNs):** Processam sequências em ambas as direções (do início ao fim e do fim ao início), capturando informações contextuais de ambas as direções.
+
+   3. **Redes Neurais de Memória de Longo Prazo (LSTM):** São uma variação das RNNs que contém unidades especiais de memória para capturar dependências de longo prazo.
+
+4. **Long Short-Term Memory (LSTM)**
+   Long Short-Term Memory (LSTM) é uma variação avançada das Redes Neurais Recorrentes (RNNs) projetada para lidar com a limitação das RNNs tradicionais de capturar dependências de longo prazo em sequências. As LSTMs foram desenvolvidas para solucionar o problema do desvanecimento e da explosão do gradiente, que ocorre quando as informações são propagadas por muitas etapas de tempo em RNNs convencionais. As LSTMs foram introduzidas para permitir que as redes aprendam relações temporais complexas e mantenham informações importantes em sequências de comprimento variável.
+
+   **Principais Características das LSTMs:**
+
+   1. **Células de Memória:** As LSTMs introduzem unidades especiais chamadas células de memória que podem armazenar informações durante várias etapas de tempo. Essas células de memória são projetadas para manter dependências de longo prazo.
+
+   2. **Portas de Controle:** As LSTMs têm três portas principais: porta de entrada, porta de esquecimento e porta de saída. Essas portas controlam o fluxo de informações dentro da célula de memória e permitem que a LSTM aprenda quais informações reter e quais esquecer.
+
+   3. **Gate de Esquecimento:** A porta de esquecimento decide qual parte da célula de memória deve ser atualizada ou esquecida. Isso ajuda a superar o problema do desvanecimento do gradiente, permitindo que informações relevantes sejam mantidas a longo prazo.
+
+   4. **Gate de Entrada:** A porta de entrada decide quais novas informações devem ser adicionadas à célula de memória. Isso permite que a LSTM aprenda e incorpore novas informações importantes.
+
+   5. **Gate de Saída:** A porta de saída controla a saída da célula de memória, decidindo qual parte da célula de memória será usada para calcular a saída atual.
+
+   **Funcionamento de uma LSTM:**
+
+   1. **Gate de Esquecimento:** Calcula qual parte da informação da célula de memória anterior deve ser esquecida, com base nas entradas atuais e no estado anterior.
+
+   2. **Gate de Entrada:** Calcula quais novas informações devem ser adicionadas à célula de memória, considerando as entradas atuais e o estado anterior.
+
+   3. **Atualização da Célula de Memória:** A célula de memória é atualizada com base nas decisões do gate de esquecimento e do gate de entrada.
+
+   4. **Gate de Saída:** Calcula qual parte da célula de memória atual deve ser usada para calcular a saída atual.
+
+   5. **Estado Atualizado:** O estado atualizado da célula de memória e a saída são usados para a próxima etapa de tempo e, assim, as informações são propagadas.
+
+   **Aplicações das LSTMs:**
+
+   As LSTMs são amplamente utilizadas em tarefas que envolvem dependências temporais complexas, como:
+
+   - **Processamento de Linguagem Natural (NLP):** Tradução automática, geração de texto, análise de sentimentos, respostas de chatbots.
+   
+   - **Previsão de Séries Temporais:** Previsão de vendas, preços de ações, previsão climática.
+
+   - **Análise de Sequências Biomédicas:** Sequências de DNA, análise de proteínas, diagnóstico médico.
+
+   **Arquiteturas Derivadas das LSTMs:**
+
+   1. **Redes Neurais de Memória de Longo Prazo (LSTM):** LSTMs aprimoradas para capturar dependências de longo prazo em sequências.
+
+   2. **Redes Neurais Bidirecionais (BiLSTMs):** Extensão das LSTMs que processam sequências em ambas as direções, capturando informações contextuais de ambas as direções.
+
+   3. **Redes Neurais de Memória de Curto Prazo (GRUs):** Variação das LSTMs com menos unidades de memória, mais simples e eficiente.
+
+5. **Redes de Hopfield**
+   As Redes de Hopfield são um tipo específico de rede neural recorrente que foi desenvolvida pelo cientista da computação John Hopfield em 1982. Essas redes são projetadas para armazenar e recuperar padrões de dados, sendo frequentemente utilizadas para resolver problemas de otimização e reconhecimento de padrões. As Redes de Hopfield têm algumas características distintas e são conhecidas por sua capacidade de funcionar como memórias associativas.
+
+   **Características Principais das Redes de Hopfield:**
+
+   1. **Modelo de Memória Associativa:** As Redes de Hopfield foram originalmente concebidas como modelos para armazenar e recuperar padrões de dados. Essas redes podem ser usadas para associar padrões de entrada com padrões de saída correspondentes.
+
+   2. **Neurônios Binários:** Cada neurônio em uma Rede de Hopfield opera com um valor binário: +1 ou -1. Isso é diferente de muitas outras redes neurais, que usam valores contínuos.
+
+   3. **Recorrência Simples:** As Redes de Hopfield são redes neurais recorrentes, o que significa que as saídas dos neurônios são retroalimentadas para as entradas. Essa retroalimentação permite que a rede iterativamente ajuste seus neurônios até alcançar um estado estável.
+
+   4. **Função de Ativação Simples:** As Redes de Hopfield geralmente usam uma função de ativação simples chamada "função de degrau bipolar" que retorna +1 se a entrada for maior que um certo limiar e -1 caso contrário.
+
+   5. **Atualização Síncrona:** Na maioria dos casos, as atualizações dos neurônios em uma Rede de Hopfield são síncronas, o que significa que todos os neurônios são atualizados ao mesmo tempo em cada iteração.
+
+   **Funcionamento das Redes de Hopfield:**
+
+   O processo de funcionamento das Redes de Hopfield é geralmente resumido em três passos:
+
+   1. **Inicialização:** Os valores iniciais dos neurônios são definidos de acordo com os padrões que se deseja armazenar.
+
+   2. **Atualização Iterativa:** A rede começa a iterar, atualizando os valores dos neurônios de acordo com suas entradas ponderadas e a função de ativação.
+
+   3. **Estabilização:** A rede continua a iterar até que os valores dos neurônios não mudem mais ou até que atinja um estado onde os valores estão mais próximos dos padrões armazenados.
+
+   **Aplicações das Redes de Hopfield:**
+
+   As Redes de Hopfield têm várias aplicações, incluindo:
+
+   - **Armazenamento e Recuperação de Padrões:** As redes podem ser usadas para armazenar padrões e, em seguida, recuperar padrões semelhantes, mesmo que tenham sido apresentados com ruído.
+
+   - **Otimização Combinatória:** As Redes de Hopfield também são usadas para resolver problemas de otimização combinatória, onde é necessário encontrar uma configuração de variáveis que otimize uma determinada função objetivo.
+
+   - **Processamento de Imagens:** Embora as Redes de Hopfield não sejam tão escaláveis para processamento de imagens de alta resolução, elas ainda podem ser usadas para denoising de imagens e restauração de padrões.
+
+6. **Máquinas de Boltzmann**
+   Máquinas de Boltzmann (Boltzmann Machines) são modelos probabilísticos e estocásticos que pertencem à família das redes neurais artificiais. Elas foram propostas pelo cientista Geoffrey Hinton e seus colaboradores em 1985. As Máquinas de Boltzmann são projetadas para modelar a distribuição conjunta de dados observados e são frequentemente usadas em tarefas de aprendizado não supervisionado, como redução de dimensionalidade, extração de características e geração de dados.
+
+   **Características Principais das Máquinas de Boltzmann:**
+
+   1. **Modelo Estocástico:** As Máquinas de Boltzmann são modeladas com base na teoria da mecânica estatística e probabilística. Elas operam com probabilidades e aleatoriedade.
+
+   2. **Rede Neural Estocástica:** Cada unidade (neurônio) em uma Máquina de Boltzmann é considerada uma unidade estocástica, que gera valores de maneira probabilística.
+
+   3. **Conexões Bidirecionais:** Diferentemente de outras redes neurais, as Máquinas de Boltzmann têm conexões totalmente conectadas, ou seja, cada unidade está conectada a todas as outras unidades.
+
+   4. **Aprendizado Não Supervisionado:** As Máquinas de Boltzmann são frequentemente usadas para aprendizado não supervisionado, onde os dados de entrada são usados para ajustar os pesos da rede sem a necessidade de rótulos.
+
+   **Tipos de Máquinas de Boltzmann:**
+
+   1. **Máquinas de Boltzmann Restritas (RBM):** Uma RBM é uma versão simplificada da Máquina de Boltzmann original. Ela consiste em uma camada visível e uma camada oculta, e não há conexões entre as unidades dentro da mesma camada. RBMs são frequentemente usadas para redução de dimensionalidade, extração de características e colaboração filtragem.
+
+   2. **Máquinas de Boltzmann Profundas (DBM):** As DBMs são extensões das RBMs que possuem várias camadas ocultas. Elas podem capturar representações mais complexas de dados e são usadas em aprendizado profundo.
+
+   3. **Máquinas de Boltzmann Restritas de Temporização (RTRBM):** Essas máquinas estendem as RBMs para modelar sequências temporais e são úteis em tarefas de processamento de linguagem natural e análise de séries temporais.
+
+   **Funcionamento das Máquinas de Boltzmann:**
+
+   1. **Amostragem Estocástica:** Cada unidade em uma Máquina de Boltzmann possui um estado binário (ativo ou inativo). Os estados das unidades são amostrados estocasticamente com base em suas probabilidades calculadas.
+
+   2. **Energia e Função de Partição:** As Máquinas de Boltzmann têm uma função de energia que representa a compatibilidade entre as unidades. A função de partição normaliza essas energias, convertendo-as em probabilidades.
+
+   3. **Aprendizado:** O aprendizado em Máquinas de Boltzmann envolve ajustar os pesos para que os dados observados tenham maior probabilidade sob o modelo. Isso é geralmente feito por métodos de gradientes estocásticos, como o Contraste de Divergência (CD).
+
+   **Aplicações das Máquinas de Boltzmann:**
+
+   As Máquinas de Boltzmann têm várias aplicações, incluindo:
+
+   - **Extração de Características:** Elas podem aprender representações de dados que são mais informativas e compactas, úteis para alimentar outras redes neurais.
+
+   - **Redução de Dimensionalidade:** RBMs podem ser usadas para reduzir a dimensionalidade de dados, facilitando o processamento e visualização.
+
+   - **Geração de Dados:** As Máquinas de Boltzmann podem gerar novos dados amostrando aleatoriamente a partir do modelo aprendido. Isso é útil para geração de imagens, texto e outros tipos de dados.
+
+   **Limitações e Desafios:**
+
+   Máquinas de Boltzmann têm algumas limitações, incluindo a dificuldade de treinamento em modelos mais profundos e a complexidade computacional do aprendizado. No entanto, suas variantes e combinações com outras arquiteturas (como Redes Neurais Profundas) tornaram essas técnicas mais eficazes e práticas.
+
+7. **Deep Belief Network**   
+   Deep Belief Networks (DBNs) são redes neurais profundas probabilísticas que consistem em múltiplas camadas de unidades estocásticas. Essas redes foram desenvolvidas por Geoffrey Hinton e sua equipe em 2006. As DBNs combinam as propriedades de Redes de Boltzmann Restritas (RBM) e Redes Neurais Profundas (DNNs) para criar modelos de aprendizado profundo que podem ser usados para tarefas de aprendizado não supervisionado e também para tarefas supervisionadas.
+
+   **Características Principais das Deep Belief Networks:**
+
+   1. **Arquitetura Profunda:** As DBNs têm várias camadas ocultas, permitindo que elas capturem representações hierárquicas complexas dos dados.
+
+   2. **Camadas Restritas de Boltzmann:** Cada camada de uma DBN é composta por uma RBM restrita, uma variação simplificada das Máquinas de Boltzmann originais.
+
+   3. **Aprendizado Não Supervisionado:** As DBNs são geralmente treinadas de maneira não supervisionada, usando um algoritmo de treinamento de contraste de divergência (CD) que ajusta os pesos das RBMs.
+
+   4. **Pré-treinamento e Afinamento:** O treinamento de DBNs geralmente começa com o pré-treinamento de cada camada RBM. Posteriormente, as camadas são afinadas usando métodos supervisionados, como o gradiente descendente.
+
+   **Funcionamento das Deep Belief Networks:**
+
+   1. **Pré-treinamento das Camadas RBM:** Cada camada RBM é treinada isoladamente em uma abordagem não supervisionada. A saída de uma camada é usada como entrada para a próxima camada.
+
+   2. **Transferência de Peso:** Após o treinamento das camadas RBM, os pesos e as ativações finais de cada camada são usados para inicializar a estrutura da DBN.
+
+   3. **Afinamento:** Uma vez que a estrutura da DBN foi inicializada, todo o sistema é afinado em uma abordagem supervisionada, usando rótulos para ajustar os pesos da rede.
+
+   **Aplicações das Deep Belief Networks:**
+
+   As DBNs têm várias aplicações, incluindo:
+
+   - **Classificação e Reconhecimento:** As DBNs podem ser usadas para tarefas de classificação, como reconhecimento de dígitos escritos à mão e reconhecimento de objetos em imagens.
+
+   - **Geração de Dados:** Assim como outras redes gerativas, as DBNs podem ser usadas para gerar novos dados que se assemelham aos dados de treinamento.
+
+   - **Extração de Características:** As camadas ocultas de uma DBN podem ser usadas para extrair características relevantes de dados de entrada, que podem ser posteriormente usadas para alimentar algoritmos de aprendizado de máquina.
+
+   **Limitações e Desafios:**
+
+   Embora as DBNs tenham demonstrado resultados promissores em várias tarefas, elas também apresentam desafios, como a complexidade computacional e a necessidade de um grande conjunto de dados para o treinamento eficaz. Além disso, a transição do treinamento não supervisionado para o treinamento supervisionado pode ser complicada e requer ajustes cuidadosos dos parâmetros. No entanto, as DBNs têm sido fundamentais no desenvolvimento de técnicas de aprendizado profundo e têm influenciado muitas outras arquiteturas, como as Redes Neurais Profundas Convencionais (DNNs) e Redes Neurais de Memória de Curto Prazo (LSTM).
+
+8. **Deep Auto-Encoders**
+   Deep Autoencoders, também conhecidos como Autoencoder Redes Neurais Profundas, são uma classe de redes neurais artificiais que visam aprender representações compactas e informativas dos dados de entrada. Eles pertencem à categoria de técnicas de aprendizado não supervisionado e são usados principalmente para tarefas de redução de dimensionalidade, extração de características e reconstrução de dados. Um autoencoder é uma rede que tenta aprender a representação latente (codificação) de seus próprios dados de entrada, com o objetivo de reconstruir esses dados o mais fielmente possível.
+
+   **Principais Características dos Deep Autoencoders:**
+
+   1. **Arquitetura Simétrica:** Um autoencoder é composto por duas partes principais: o encoder (codificador) e o decoder (decodificador). O encoder transforma os dados de entrada em uma representação latente de dimensionalidade menor, enquanto o decoder reconstrói os dados originais a partir dessa representação.
+
+   2. **Camadas Profundas:** A principal característica que distingue os deep autoencoders é a presença de múltiplas camadas ocultas. Isso permite que eles capturem representações hierárquicas e complexas dos dados.
+
+   3. **Treinamento Não Supervisionado:** Inicialmente, os deep autoencoders são treinados de maneira não supervisionada, sem a necessidade de rótulos de classe. Eles buscam minimizar a diferença entre os dados de entrada e suas reconstruções.
+
+   **Funcionamento dos Deep Autoencoders:**
+
+   1. **Encoder (Codificação):** O encoder recebe os dados de entrada e os transforma em uma representação latente de dimensionalidade menor. Cada camada oculta do encoder aplica uma transformação linear seguida de uma função de ativação.
+
+   2. **Latent Representation (Representação Latente):** A representação latente é uma versão compacta dos dados originais, capturando as informações mais relevantes.
+
+   3. **Decoder (Decodificação):** O decoder recebe a representação latente e tenta reconstruir os dados de entrada originais. Assim como o encoder, cada camada oculta do decoder aplica uma transformação linear seguida de uma função de ativação.
+
+   4. **Função de Custo:** A função de custo usada para treinar os deep autoencoders é geralmente a diferença entre os dados de entrada originais e suas reconstruções. O objetivo é minimizar essa diferença.
+
+   **Aplicações dos Deep Autoencoders:**
+
+   Os deep autoencoders têm várias aplicações, incluindo:
+
+   - **Redução de Dimensionalidade:** Eles podem ser usados para reduzir a dimensionalidade de dados, preservando ao mesmo tempo as informações mais relevantes. Isso é útil para visualização e para alimentar algoritmos de aprendizado de máquina.
+
+   - **Extração de Características:** Os deep autoencoders podem aprender automaticamente as características mais relevantes dos dados, tornando-os úteis como uma etapa de pré-processamento para outras tarefas.
+
+   - **Remoção de Ruído:** Eles podem ser usados para remover ruído de dados, treinando os autoencoders para reconstruir os dados originais a partir de versões ruidosas.
+
+   - **Geração de Dados:** Com o treinamento adequado, os deep autoencoders podem gerar novos dados que se assemelham aos dados de treinamento.
 
 
 [--------------------------------------]
-**Formula matematica de cada conceito:**
+**Formula matematica de cada conceito:**[](#form)
 1. **Perceptron:**
    A saída de um perceptron é calculada como a soma ponderada das entradas mais o viés, seguida pela aplicação de uma função de ativação. A fórmula matemática do perceptron é:
    
@@ -425,7 +744,7 @@ A Inteligência Artificial (IA) é um campo amplo que engloba várias abordagens
    A ideia geral é que a rede geradora tenta maximizar a probabilidade de que o discriminador classifique suas amostras como reais, enquanto o discriminador tenta corretamente classificar amostras reais e falsas. Isso cria um equilíbrio competitivo entre as duas redes, levando a uma geração de amostras mais realistas ao longo do treinamento.
 
 [-----------------------------------------------]
-**Simplificando a formula de maneira detalhada:**
+**Simplificando a formula de maneira detalhada:**[](#simple)
 1. **Perceptron:**
    Imagine um perceptron com três entradas (x1, x2, x3), três pesos (w1, w2, w3), e um viés (b). A saída (y) do perceptron é calculada da seguinte forma:
 
@@ -472,7 +791,7 @@ A Inteligência Artificial (IA) é um campo amplo que engloba várias abordagens
    - O processo é repetido em ciclos até que a rede geradora crie amostras indistinguíveis das reais.
 
 [-------------------]
-**Exemplo em código**
+**Exemplo em código**[](#example)
 1. **Perceptron - Operação OR:**
    ```javascript
    // Definindo a função de ativação (degrau)
@@ -1089,7 +1408,7 @@ A Inteligência Artificial (IA) é um campo amplo que engloba várias abordagens
 
 
 [-------------------]
-**Metodos comuns e utilizados em certa arquitetura**
+**Metodos comuns e utilizados em certa arquitetura**[](#method)
 
 1. **Funções de Ativação:**
 
@@ -1150,7 +1469,7 @@ A Inteligência Artificial (IA) é um campo amplo que engloba várias abordagens
 
 
 [-------------------------------------]      
-**Arquiteturas e ativações detalhadas**
+**Arquiteturas e ativações detalhadas**[](#archandact)
 1. **Resumo**
       Existem várias arquiteturas de redes neurais, cada uma com suas próprias características e usos. Algumas das principais arquiteturas de redes neurais incluem:
    1. Redes Multilayer Perceptron
@@ -1177,6 +1496,7 @@ A Inteligência Artificial (IA) é um campo amplo que engloba várias abordagens
 
 
 2. **Formula matematica completa de cada ativação**
+
    Existem várias fórmulas matemáticas associadas às funções de ativação e arquiteturas de redes neurais. Algumas das fórmulas matemáticas comuns para funções de ativação incluem:
    - Função sigmóide: ![Alt text](image.png)
    - Função ReLU: ![Alt text](image-1.png)
