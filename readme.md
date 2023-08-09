@@ -1,17 +1,25 @@
 A Inteligência Artificial (IA) é um campo amplo que engloba várias abordagens, técnicas e conceitos. Abaixo estão alguns dos conceitos mais importantes relacionados à IA:
 
 [SUMARIO]
-[Tipos de IA](#type)
-[Sessão dedicada e aprofundada sobre cada arquitetura](#arch)
-[Formulas de cada conceito](#form)
-[Simplificando a formula](#simple)
-[Exemplos em código (Não funcionais, apenas representação)](#example)
-[Metodos mais utilizados](#method)
-[Arquiteturas e ativações detalhadas](#archandact)
+
+[Tipos de IA](#tipos)
+
+[Sessão dedicada e aprofundada sobre cada arquitetura](#aprofundando)
+
+[Formulas de cada conceito](#formulas)
+
+[Simplificando a formula](#simplificando)
+
+[Exemplos em código (Não funcionais, apenas representação)](#exemplos)
+
+[Metodos mais utilizados](#metodos)
+
+[Arquiteturas e ativações detalhadas](#arquiteturas)
 
 
 [--------------]
-**Tipos de IA:**![](#type)
+# Tipos
+**Tipos de IA:**
 1. **Aprendizado de Máquina (Machine Learning - ML):**
    O Aprendizado de Máquina é uma subárea da IA que se concentra em desenvolver algoritmos e modelos que permitem aos computadores aprender a partir de dados. Existem três principais abordagens de ML:
    - **Aprendizado Supervisionado:** Os modelos são treinados em um conjunto de dados rotulados, onde cada exemplo possui uma entrada e uma saída esperada. O objetivo é fazer com que o modelo generalize para prever saídas corretas para novos dados não vistos.
@@ -392,7 +400,8 @@ A Inteligência Artificial (IA) é um campo amplo que engloba várias abordagens
 
 
 [----------------]
-***Sessão dedicada e aprofundada sobre cada arquitetura (O mais importante e direto)***[](#arch)
+# Aprofundando
+***Sessão dedicada e aprofundada sobre cada arquitetura (O mais importante e direto)***
 1. **Redes Multilayer Perceptron**
    Redes Multilayer Perceptron (MLP) são um tipo de arquitetura de rede neural artificial que consiste em várias camadas de neurônios, incluindo uma camada de entrada, uma ou mais camadas ocultas e uma camada de saída. Essa arquitetura é chamada de "multilayer" (multicamadas) porque inclui múltiplas camadas de neurônios interconectados. Vou explicar com mais detalhes:
 
@@ -706,7 +715,8 @@ A Inteligência Artificial (IA) é um campo amplo que engloba várias abordagens
 
 
 [--------------------------------------]
-**Formula matematica de cada conceito:**[](#form)
+# Formulas
+**Formula matematica de cada conceito:**
 1. **Perceptron:**
    A saída de um perceptron é calculada como a soma ponderada das entradas mais o viés, seguida pela aplicação de uma função de ativação. A fórmula matemática do perceptron é:
    
@@ -744,7 +754,8 @@ A Inteligência Artificial (IA) é um campo amplo que engloba várias abordagens
    A ideia geral é que a rede geradora tenta maximizar a probabilidade de que o discriminador classifique suas amostras como reais, enquanto o discriminador tenta corretamente classificar amostras reais e falsas. Isso cria um equilíbrio competitivo entre as duas redes, levando a uma geração de amostras mais realistas ao longo do treinamento.
 
 [-----------------------------------------------]
-**Simplificando a formula de maneira detalhada:**[](#simple)
+# Simplificando
+**Simplificando a formula:**
 1. **Perceptron:**
    Imagine um perceptron com três entradas (x1, x2, x3), três pesos (w1, w2, w3), e um viés (b). A saída (y) do perceptron é calculada da seguinte forma:
 
@@ -791,7 +802,8 @@ A Inteligência Artificial (IA) é um campo amplo que engloba várias abordagens
    - O processo é repetido em ciclos até que a rede geradora crie amostras indistinguíveis das reais.
 
 [-------------------]
-**Exemplo em código**[](#example)
+# Exemplos
+**Exemplo em código**
 1. **Perceptron - Operação OR:**
    ```javascript
    // Definindo a função de ativação (degrau)
@@ -1408,7 +1420,8 @@ A Inteligência Artificial (IA) é um campo amplo que engloba várias abordagens
 
 
 [-------------------]
-**Metodos comuns e utilizados em certa arquitetura**[](#method)
+# Metodos
+**Metodos comuns e utilizados em certa arquitetura**
 
 1. **Funções de Ativação:**
 
@@ -1468,8 +1481,9 @@ A Inteligência Artificial (IA) é um campo amplo que engloba várias abordagens
 
 
 
-[-------------------------------------]      
-**Arquiteturas e ativações detalhadas**[](#archandact)
+[-------------------------------------]
+# Arquiteturas      
+**Arquiteturas e ativações detalhadas**
 1. **Resumo**
       Existem várias arquiteturas de redes neurais, cada uma com suas próprias características e usos. Algumas das principais arquiteturas de redes neurais incluem:
    1. Redes Multilayer Perceptron
